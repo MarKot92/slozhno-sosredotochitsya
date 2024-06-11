@@ -4,9 +4,43 @@
   переключая тему
 */
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color: #FF8DCB;
+    --color-triangle: #353430;
+    --color-menu: #353430;
+    --title-color: #FFC2E6;
+    --color-subtitle: #353430;  
+    --color-text-header: #353430;
+    --content-text-color: #353430;
+    --background-image: url(../images/cover-image-light.png);
+  }
+  .page.theme_light .decorative-element {
+    opacity: 0;
+  }
+
+  .page.theme_auto .decorative-element {
+    opacity: 0;
+  }
+}
+
 .page.theme_light {
+  --accent-color: #FF8DCB;
+  --color-triangle: #353430;
+  --color-menu: #353430;
+  --title-color: #FFC2E6;
+  --color-subtitle: #353430;  
+  --color-text-header: #353430;
+  --content-text-color: #353430;
+  --background-image: url(../images/cover-image-light.png);
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+    чем стили в медиазапросе предпочтений пользователя */
 }
+
+.page.theme_light .decorative-element {
+  opacity: 0;
+}
+
+
+

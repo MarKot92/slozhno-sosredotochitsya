@@ -1,5 +1,312 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: "IBM Plex Mono", sans-serif;
+  background: var(--background-image) no-repeat center / cover;
+  background-color: var(--main-color);
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  padding: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem) 0;
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.header::before {
+  top: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
+  right: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
+  border-top: 1px solid var(--color-triangle);
+  border-right: 1px solid var(--color-triangle);
+}
+
+.header::after {
+  bottom: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
+  left: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
+  border-bottom: 1px solid var(--color-triangle);
+  border-left: 1px solid var(--color-triangle);
+}
+
+.decorative-element {
+  max-width: 33px;
+  margin-inline-start: auto;
+  margin-inline-end: 28px;
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 1.39;
+  text-transform: uppercase;
+}
+
+.decorative-element::after {
+  content: "";
+  position: absolute;
+  top: clamp(1.125rem, 0.529rem + 2.54vw, 1.75rem);
+  right: clamp(1.188rem, 0.591rem + 2.54vw, 1.813rem);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px #FF0070;
+  background-color: var(--accent-color);
+
+}
+
+.title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: clamp(5.981rem, 5.784rem + 0.84vw, 6.188rem);
+  text-shadow: 4px 4px 0 #FF0070;
+}
+
+.subtitle {
+  color: var(--color-text-header);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  background-color: var(--accent-color);
+}
+
+.header__text {
+  max-width: 364px;  
+  margin-inline-start: auto;  
+  margin-inline-end: 0;
+  margin-block-start: clamp(3.438rem, -2.944rem + 27.23vw, 10.125rem);
+  margin-block-end: clamp(0rem, -9.661rem + 41.22vw, 10.125rem);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: end;
+  gap: 16px;
+  margin-inline-end: 7px;
+  margin-block-start: clamp(2.563rem, -3.789rem + 27.1vw, 9.219rem);
+  margin-block-end: clamp(4.375rem, -2.185rem + 27.99vw, 11.25rem);
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  border: none;
+  color: var(--color-menu);
+  font-size: 18px;
+  line-height: 1;
+  text-transform: lowercase;
+  background: initial;
+}
+
+.header__theme-menu-button:default {
+  outline: 1px solid var(--color-menu);
+}
+
+@media (hover: hover) {
+  .header__theme-menu-button:hover {
+    outline: 1px solid var(--color-menu);
+    cursor: pointer;
+  }
+}
+
+@media (hover: none) {
+  .header__theme-menu-button:active {
+    outline: 1px solid var(--color-menu);
+  }
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--color-menu);
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .title {
+    margin-inline-start: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+  }
+  .header__text {
+    max-width: clamp(22.75rem, -1.063rem + 49.61vw, 30.688rem);
+  }
+}
+
+@media (min-width: 1000px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    margin-block-start: -24px;
+    margin-block-end: 293px;
+  }
+  .header__text {
+    margin-block-start: 130px;
+    margin-block-end: 115px;
+  }
+}
+
+/*---------------MAIN-------------------------------------*/
+
+.main {
+  padding-block-start: clamp(2.5rem, 1.307rem + 5.09vw, 3.75rem);
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+  padding-block-end: clamp(2.5rem, 0.711rem + 7.63vw, 4.375rem);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.content-title {
+  color: var(--color-subtitle);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-title_bg-accent-color {
+  color: var(--color-text-header);
+  background-color: var(--accent-color);
+}
+
+.box-text {
+  padding-block-end: 10px;
+  color: var(--content-text-color);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 2px var(--accent-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--content-text-color);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    border-block-end: 1px solid;
+    cursor: pointer;
+  }
+}
+
+@media (hover: none) {
+  .link:active {
+    border-block-end: 1px solid;
+  }
+}
+
+.content-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-title_margin-bottom {
+  margin-block-end: 10px;
+}
+
+.content-title_font-weight {
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: minmax(236px, 1fr) minmax(472px, 649px);
+  }
+  .content-title_flex {
+    width: clamp(14.75rem, -0.063rem + 30.86vw, 19.688rem);
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-box_flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/*--------------MAIN-PICTURES-------------*/
+
+.main-pictures {
+  display: grid;
+  gap: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
+  padding-block-end: clamp(2.5rem, 1.307rem + 5.09vw, 3.75rem);
+}
+
+.pictures {
+  display: grid;
+  gap: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .pictures {
+    grid-template-columns: minmax(14.31rem, 19.69rem) minmax(14.375rem, 19.688rem) 1fr;
+    grid-template-rows: minmax(12rem, 16.25rem) minmax(14.375rem, 19.688rem) 1fr;
+  }
+
+  .img-sunset {
+    grid-column: 1 / 3;
+  }
+
+  .img-ice-cream {
+    grid-column: 3 / end;
+    grid-row: 1 / 3;
+  }
+
+  .img-books {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .img-cassette {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  
+  .img-street {
+    grid-column: 2 / end;
+  }  
+}
+
+/*--------------FOOTER---------------------*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
